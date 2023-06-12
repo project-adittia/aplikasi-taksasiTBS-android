@@ -22,7 +22,7 @@ const ResultPage = ({navigation}) => {
 
   const getDataresult = async () => {
     await axios
-      .get('http://156.67.217.28:8080/api/result')
+      .get('http://localhost:8080/api/result')
       .then(response => {
         const arrResult = response.data[0];
         setDatahasil(arrResult);
