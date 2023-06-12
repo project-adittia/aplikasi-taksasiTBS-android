@@ -24,7 +24,7 @@ export const SignUp = ({navigation}) => {
   const Register = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://156.67.217.28:8080/api/signup', {
+      await axios.post('http://localhost:8080/api/signup', {
         name: nama,
         username: username,
         password: password,
