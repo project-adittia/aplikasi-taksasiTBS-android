@@ -38,7 +38,7 @@ export const LoginPage = ({navigation}) => {
     e.preventDefault();
     try {
       await axios
-        .post('http://156.67.217.28:8080/api/login', {
+        .post('http://localhost:8080/api/login', {
           username: username,
           password: password,
         })
