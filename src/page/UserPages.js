@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const UserPage = ({navigation}) => {
   const Logout = async () => {
     try {
-      await axios.delete('http://156.67.217.28:8080/api/logout');
+      await axios.delete('http://localhost:8080/api/logout');
       await AsyncStorage.removeItem('token');
       await AsyncStorage.removeItem('role');
       await AsyncStorage.removeItem('id_user');
@@ -64,7 +64,7 @@ const UserPage = ({navigation}) => {
     const DataHistory = async () => {
       try {
         await axios
-          .post('http://156.67.217.28:8080/api/history', {
+          .post('http://localhost:8080/api/history', {
             UserId: iduser,
           })
           .then(response => {
