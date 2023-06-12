@@ -34,7 +34,7 @@ const FormTaksasi = ({navigation}) => {
 
   const APIget = async () => {
     await axios
-      .get('http://156.67.217.28:8080/api/blok')
+      .get('http://localhost:8080/api/blok')
       .then(res => {
         // console.log(res.data);
         const datablok = res.data;
@@ -99,7 +99,7 @@ const FormTaksasi = ({navigation}) => {
         // let result_predict;
 
         await axios
-          .post('http://156.67.217.28:5000/predict-taksasi', {
+          .post('http://localhost:5000/predict-taksasi', {
             datas: [
               parseInt(index + 1),
               parseInt(item.tahun_tanam),
@@ -141,7 +141,7 @@ const FormTaksasi = ({navigation}) => {
 
   const HandleFinish = () => {
     daftarblok.forEach(async (item, index) => {
-      await axios.post('http://156.67.217.28:8080/api/taksasi', {
+      await axios.post('http://localhost:8080/api/taksasi', {
         id_petugas: iduser,
         tanggal: item.tanggal,
         nama_blok: item.blok,
