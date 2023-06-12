@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const AdminPage = ({navigation}) => {
   const Logout = async () => {
     try {
-      await axios.delete('http://156.67.217.28:8080/api/logout');
+      await axios.delete('http://localhost:8080/api/logout');
       await AsyncStorage.removeItem('token');
       await AsyncStorage.removeItem('role');
       navigation.navigate('StartPage');
@@ -43,7 +43,7 @@ const AdminPage = ({navigation}) => {
 
   const getDataUser = async () => {
     await axios
-      .get('http://156.67.217.28:8080/api/alluser')
+      .get('http://localhost:8080/api/alluser')
       .then(response => {
         const arrUser = response.data;
         const handleUser = [];
@@ -66,7 +66,7 @@ const AdminPage = ({navigation}) => {
   const VerificationUser = async () => {
     try {
       await axios
-        .put('http://156.67.217.28:8080/api/verify/' + idVerif)
+        .put('http://localhost:8080/api/verify/' + idVerif)
         .then(response => {
           setIdchange(idVerif);
           console.log('Berhasil Diverifikasi');
